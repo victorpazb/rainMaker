@@ -1,11 +1,36 @@
-int[][] rainMatrix = new int[5][5]; //matrix dimensions (side x side)
+public class Main {
 
-        for (int i = 0; i < rainMatrix.length; i++) {
-            for (int j = 0; j < 5; j++) {
+    public static void Swap(int c1, int c2, int[][] matrix){
+        int[] aux =  matrix[c1];
+        matrix[c1] = matrix[c2];
+        matrix[c2] = aux;
+    }
 
-                int columnIndex = new Random().nextInt(4) + 1;
-                rainMatrix[i][columnIndex] = 1;
-                //keep the rain drop to the ground ??
 
+
+    public static void main(String[] args) {
+
+
+        int[][] rainMatrix = new int[5][5]; //matrix dimensions (side x side)
+
+        boolean isRainning = true;
+
+        while (isRainning) {
+            int columnIndex = new Random().nextInt(4) + 1;
+            rainMatrix[0][columnIndex] = 1;
+
+            //rolar essa gota pra  baixo
+            int colum1Index = 0;
+            int colum2Index = 1;
+            for (int i = 0; i < rainMatrix.length - 1; i++) {
+                Swap(colum1Index, colum2Index, rainMatrix);
+                colum1Index++;
+                colum2Index++;
             }
+
+
         }
+
+    }
+
+}
