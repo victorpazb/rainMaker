@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
 
     public static void Swap(int c1, int c2, int[][] matrix){
