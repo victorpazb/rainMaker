@@ -19,7 +19,7 @@ public class Main {
             int columnIndex = new Random().nextInt(4) + 1;
             rainMatrix[0][columnIndex] = 1;
 
-            //rolar essa gota pra  baixo
+            //making the drop falls
             int colum1Index = 0;
             int colum2Index = 1;
             for (int i = 0; i < rainMatrix.length - 1; i++) {
